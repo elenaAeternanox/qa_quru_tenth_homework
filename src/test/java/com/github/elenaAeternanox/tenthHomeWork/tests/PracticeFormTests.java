@@ -1,6 +1,7 @@
 package com.github.elenaAeternanox.tenthHomeWork.tests;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.github.elenaAeternanox.tenthHomeWork.tests.TestData.*;
@@ -12,6 +13,7 @@ public class PracticeFormTests extends TestBase {
             listOfSubjects,
             listOfHobbies;
 
+    @Tag("registration_page")
     @Test
     @DisplayName("Check Practice form on the 'https://demoqa.com/automation-practice-form' page")
     void fillFormTest() {
