@@ -54,9 +54,9 @@ tasks.withType(Test) {
 }
 
 task tag_tests(type: Test) {
-    systemProperty("tag", System.getProperty("tag", "$tag"))
-    systemProperty("URL", System.getProperty("URL", "$URL"))
-    systemProperty("environment", System.getProperty("environment", "$environment"))
+    systemProperty("tag", System.getProperty("tag", "tag"))
+    systemProperty("URL", System.getProperty("URL", "URL"))
+    systemProperty("environment", System.getProperty("environment", "prod"))
     useJUnitPlatform {
         includeTags "registration_page"
         includeTags "files_test"
