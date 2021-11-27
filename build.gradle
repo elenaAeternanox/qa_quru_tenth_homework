@@ -58,6 +58,6 @@ task tag_tests(type: Test) {
     systemProperty("URL", System.getProperty("URL", "$URL"))
     systemProperty("environment", System.getProperty("environment", "$environment"))
     useJUnitPlatform {
-        includeTags System.getProperty("tag", "$tag")
+        includeTags System.setProperty("tag", "$tag")
     }
 }
