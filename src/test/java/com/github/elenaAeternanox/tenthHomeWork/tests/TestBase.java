@@ -15,17 +15,17 @@ import static com.codeborne.selenide.Configuration.*;
 
 public class TestBase {
 
-    public EnvironmentConfig credentials = ConfigFactory.create(EnvironmentConfig.class);
+    public static EnvironmentConfig credentials = ConfigFactory.create(EnvironmentConfig.class);
     RegistrationPage registrationPage = new RegistrationPage();
 
-    String login = credentials.login();
-    String password = credentials.password();
-    String selenoidUrl = System.getProperty("URL");
+    private static String login = credentials.login();
+    private static String password = credentials.password();
+    private static String selenoidUrl = System.getProperty("URL");
 
-    String remoteUrl = String.format("https://%s:%s@%s", login, password, selenoidUrl);
+    private static String remoteUrl = String.format("https://%s:%s@%s", login, password, selenoidUrl);
 
     @BeforeAll
-    public void setup() {
+    public static void setup() {
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         startMaximized = true;
