@@ -11,17 +11,13 @@ import static java.lang.String.format;
 @Tags({@Tag("files_test"),@Tag("registration_page")})
 public class EnvironmentTest {
 
-    public EnvironmentConfig credentials =
-            ConfigFactory.create(EnvironmentConfig.class);
+    public EnvironmentConfig credentials = ConfigFactory.create(EnvironmentConfig.class);
 
     @Test
     void readCredentialsTest() {
         String login = credentials.login();
         String password = credentials.password();
         String environment = credentials.environment();
-
-        System.out.println(login);
-        System.out.println(password);
 
         String message = format("The build is run on %s. You are login as %s with password %s", environment, login, password);
         System.out.println(message);
