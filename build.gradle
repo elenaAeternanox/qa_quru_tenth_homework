@@ -54,11 +54,10 @@ tasks.withType(Test) {
 }
 
 task tag_tests(type: Test) {
-    systemProperties(System.getProperties())
-    System.setProperty("tag", "$tag")
+    systemProperty("tag", System.getProperty("tag", "$tag"))
+    systemProperty("URL", System.getProperty("URL", "$URL"))
+    systemProperty("environment", System.getProperty("environment", "$environment"))
     useJUnitPlatform {
         includeTags System.getProperty("tag", "$tag")
     }
-    System.setProperty("selenoidUrl", "$URL")
-    System.setProperty("environment", "$environment")
 }
