@@ -51,11 +51,14 @@ tasks.withType(Test) {
             exceptionFormat "short"
         }
     }
+}
 
-    task tags_tests(type: Test) {
-        systemProperty("tag", System.getProperty("tag", "tag"))
-        useJUnitPlatform {
-            includeTags System.getProperty("tag")
-        }
+task tag_tests(type: Test) {
+    systemProperties(System.getProperties())
+    System.setProperty("tag", "$tag")
+    useJUnitPlatform {
+        includeTags System.getProperty("tag", "$tag")
     }
+    System.setProperty("selenoidUrl", "$URL")
+    System.setProperty("environment", "$environment")
 }
