@@ -30,7 +30,6 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         startMaximized = true;
         remote = remoteUrl;
-        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
