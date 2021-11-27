@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Tag("files_test")
-public class CheckFilesTest {
+public class CheckFilesTest extends TestBase {
 
     @Test
     @DisplayName("Download and check pdf file")
